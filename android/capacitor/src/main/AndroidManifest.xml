@@ -5,6 +5,12 @@
         android:required="false" />
 
     <application>
+
+        <activity
+          android:name="com.getcapacitor.NewBridgeActivity"
+          android:theme="@style/AppTheme.NoActionBarLaunch"
+          android:launchMode="singleTask"
+          android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"></activity>
         <service android:name="com.getcapacitor.plugin.background.BackgroundTaskService" android:exported="false" />
         <receiver android:name="com.getcapacitor.plugin.notification.TimedNotificationPublisher" />
         <receiver android:name="com.getcapacitor.plugin.notification.NotificationDismissReceiver" />
@@ -15,4 +21,8 @@
             </intent-filter>
         </service>
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 </manifest>
